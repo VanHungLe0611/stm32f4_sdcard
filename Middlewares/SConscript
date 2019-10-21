@@ -1,0 +1,13 @@
+Import('env')
+#Script for Third Party
+objs = []
+objs.append(env.Object(Glob('Third_Party/FreeRTOS/Source/*.c')))
+objs.append(env.Object(Glob('Third_Party/FreeRTOS/Source/CMSIS_RTOS/*.c')))
+objs.append(env.Object(Glob('Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/*.c')))
+objs.append(env.Object(Glob('Third_Party/FreeRTOS/Source/portable/MemMang/*.c')))
+objs.append(env.Object(Glob('Third_Party/FatFs/src/*.c')))
+objs.append(env.Object(Glob('Third_Party/FatFs/src/option/*.c')))
+objs.append(env.Object(Glob('ST/STM32_USB_Device_Library/Core/Src/*.c')))
+objs.append(env.Object(Glob('ST/STM32_USB_Device_Library/Class/MSC/Src/*.c')))
+#objs.append(env.Object(Glob('ST/STM32_USB_Device_Library/Class/CDC/Src/*.c')))
+Return('objs')
